@@ -9,11 +9,10 @@
 #include <cassert>
 #include <cstdint>
 #include <functional>
-#include <list>
+#include <deque>
 #include <memory>
 #include <type_traits>
 #include <utility>
-#include <deque>
 
 #include "no_locking_policy.hpp"
 
@@ -280,7 +279,6 @@ private:
         recycle_function m_recycle;
 
         /// Stores all the free resources
-        //std::list<value_ptr> m_free_list;
         std::deque<value_ptr> m_free_list;
 
         /// Mutex used to coordinate access to the pool. We had to
