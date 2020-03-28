@@ -220,7 +220,7 @@ private:
             {
                 lock_type lock(m_mutex);
 
-                if (m_free_list.size() > 0)
+                if (m_free_list.empty() == false)
                 {
                     resource = std::move(m_free_list.back());
                     m_free_list.pop_back();
